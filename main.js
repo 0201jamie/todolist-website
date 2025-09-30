@@ -29,10 +29,20 @@ Alpine.data('todo', () => ({
     deleteTask(task)
     {
         const deletedTask = task
-        console.log(deletedTask)
         for (let i = 0; i < this.tasks.length; i++) {
             if (this.tasks[i] === deletedTask) {
                 this.tasks.splice(i, 1)
+            }
+        }
+    },
+
+    finishTask(task) {
+        console.log('finished task')
+        const finishedTask = task
+
+        for (let i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i] === finishedTask) {
+
             }
         }
     }
