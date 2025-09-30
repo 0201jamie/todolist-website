@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="Fixed bug that you delete wrong task when searching for a specific task. The project now uses vite and Tailwind &amp; AlpineJS is installed as a module.">
+    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
@@ -98,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1759143938828</updated>
       <workItem from="1759143939858" duration="11720000" />
-      <workItem from="1759217054263" duration="19035000" />
+      <workItem from="1759217054263" duration="22369000" />
     </task>
     <task id="LOCAL-00001" summary="First Design Prototype + Task Search Function">
       <option name="closed" value="true" />
@@ -132,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759233861639</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future.">
+      <option name="closed" value="true" />
+      <created>1759240441270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759240441270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +151,7 @@
     <MESSAGE value="You can now add Tasks by pressing Enter in the Search/Add Field" />
     <MESSAGE value="You can now sort your todos with drag &amp; drop and also delete tasks" />
     <MESSAGE value="Fixed bug that you delete wrong task when searching for a specific task. The project now uses vite and Tailwind &amp; AlpineJS is installed as a module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug that you delete wrong task when searching for a specific task. The project now uses vite and Tailwind &amp; AlpineJS is installed as a module." />
+    <MESSAGE value="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future." />
+    <option name="LAST_COMMIT_MESSAGE" value="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future." />
   </component>
 </project>

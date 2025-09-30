@@ -7,6 +7,7 @@ console.log('test')
 
 Alpine.data('todo', () => ({
     tasks: ['Clean room', 'Read 10 Sites', 'Learn AlpineJS & Tailwind'],
+    finished_tasks: ['Clean room', 'Read 10 Sites', 'Learn AlpineJS'],
     search: '',
 
     get filteredTasks()
@@ -42,7 +43,8 @@ Alpine.data('todo', () => ({
 
         for (let i = 0; i < this.tasks.length; i++) {
             if (this.tasks[i] === finishedTask) {
-
+                this.finished_tasks.push(finishedTask)
+                this.tasks.splice(i, 1)
             }
         }
     }
