@@ -5,22 +5,12 @@ Alpine.plugin(sort)
 
 Alpine.store('todo', {
     search: '',
-    tasks: {
-        "1": {
-            id: crypto.randomUUID(),
-            label: "Clean room",
-            active: true,
-        },
-        "2": {
-            id: crypto.randomUUID(),
-            label: "Read 10 Sites",
-            active: true,
-        },
-        "3": {
-            id: crypto.randomUUID(),
-            label: "Learn AlpineJS & Tailwind",
-            active: true,
-        },
+    tasks: {  },
+    isListFilled: false,
+
+    // TODO: Implement Function that checks if there are active tasks
+    checkIfListIsFilled() {
+        // const taskArrayLength = Object.keys(this.tasks).length
     },
 
     get filteredTasks()
@@ -28,12 +18,20 @@ Alpine.store('todo', {
         return Object.values(this.tasks).filter(
             i => i.label.toLowerCase().includes(this.search.toLowerCase())
         )
+    },
 
+    addTask(taskId, taskLabel, taskActive) {
+        if (taskLabel !== '') {
+            const newTask = { id: taskId, label: taskLabel, active: taskActive }
+
+            this.tasks[taskId] = newTask;
+            this.search = ''
+        }
     },
 
     deleteTask(task) {
-        return true
-    }
+        delete this.tasks[task.id]
+    },
 })
 
 window.Alpine = Alpine
