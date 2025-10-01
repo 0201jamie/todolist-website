@@ -5,22 +5,23 @@
     <title>To Do List App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100" x-data="todo">
-    <div class="h-screen flex flex-col items-center justify-center" x-data="todo">
+<body class="bg-gray-100" x-data>
+    <div class="h-screen flex flex-col items-center justify-center">
         <h2 class="text-2xl font-abold mt-5 mb-5">To Do List📝</h2>
-        <input type="text" class="border-1 border-gray-700 rounded-md p-2 w-100 mb-5" placeholder="Search or add Task..." x-model="search" @keyup.enter="addTask()">
-        <ul x-sort class="mb-5">
-            <p class="mb-2">Need to do:</p>
-            <template x-for="task in filteredTasks" class="bg-white rounded-md">
-                <li x-sort:item
-                    class="flex flex-row items-center w-100 bg-white mb-2 rounded p-2 justify-between">
-                    <div class="flex flex-row items-center" x-data="{ check: false }">
-                        <input type="checkbox" class="mr-2" @keyup.enter="check = !check; if (check === true) { finishTask(task) }" x-model="check" @change="if (check === true) { finishTask(task) }">
-                        <p x-text="task"></p>
+        <input type="text" class="border-1 border-gray-700 rounded-md p-2 w-100 mb-5" placeholder="Search or add Task..." x-model="$store.todo.search">
+        <!-- TODO: Sort Button, Fix checkboxes,  -->
+        <ul  class="mb-5" x-sort>
+            <p class="mb-2" x-text="">Need to do:</p>
+            <template x-for="task in $store.todo.filteredTasks" class="bg-white rounded-md">
+                <li
+                    class="flex flex-row items-center w-100 bg-white mb-2 rounded p-2 justify-between" :id="task.id">
+                    <div class="flex flex-row items-center"">
+                        <input type="checkbox" class="mr-2">
+                        <p x-text="task.label"></p>
                     </div>
                     <div>
-                        <button @click="deleteTask(task)"
-                                class="right-3 w-3 h-3 cursor-pointer hover:opacity-70 transition duration-300">
+                        <button
+                                class="right-3 w-3 h-3 cursor-pointer hover:opacity-70 transition duration-300" @click="$store.todo.deleteTask(task)">
                             <img src="Assets/trashcan.png">
                         </button>
                     </div>
@@ -28,24 +29,6 @@
             </template>
         </ul>
         <hr class="-gray-100 h-0.1 w-100 mb-5">
-        <ul x-sort>
-            <p class="mb-2">Finished:</p>
-            <template x-for="finished_task in finished_tasks" class="rounded-md">
-                <li x-sort:item
-                    class="flex flex-row items-center w-100 bg-white mb-2 rounded p-2 justify-between opacity-50">
-                    <div class="flex flex-row items-center" x-data="{ check: true }">
-                        <input type="checkbox" class="mr-2" @keyup.enter="check = !check; if (check === true) { finishTask(finished_task) }" x-model="check" @change="if (check === true) { finishTask(finished_task) }">
-                        <p x-text="finished_task" class="line-through"></p>
-                    </div>
-                    <div>
-                        <button @click="deleteTask(finished_task)"
-                                class="right-3 w-3 h-3 cursor-pointer hover:opacity-70 transition duration-300">
-                            <img src="Assets/trashcan.png">
-                        </button>
-                    </div>
-                </li>
-            </template>
-        </ul>
         <p x-text="'&copy' + new Date().getFullYear() + ' Jamie Augustin'" class="absolute bottom-3 font-light"></p>
     <script type="module" src="main.js"></script>
 </body>

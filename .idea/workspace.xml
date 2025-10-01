@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future.">
+    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="If you now check a unfinished task it will appear in the finished list and has a different styling to show it is not unfinished anymore. Furthermore, I added a copyright symbol with my name and the current year">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
@@ -39,6 +39,9 @@
     &quot;accountId&quot;: &quot;4b03f783-ecc0-42a4-8daf-af61fdf9a71e&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -62,6 +65,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.toDoOptions",
     "ts.external.directory.path": "C:\\Users\\j.augustin\\AppData\\Local\\Programs\\WebStorm 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -98,7 +102,8 @@
       <option name="presentableId" value="Default" />
       <updated>1759143938828</updated>
       <workItem from="1759143939858" duration="11720000" />
-      <workItem from="1759217054263" duration="22369000" />
+      <workItem from="1759217054263" duration="23002000" />
+      <workItem from="1759304196810" duration="12819000" />
     </task>
     <task id="LOCAL-00001" summary="First Design Prototype + Task Search Function">
       <option name="closed" value="true" />
@@ -140,11 +145,30 @@
       <option name="project" value="LOCAL" />
       <updated>1759240441270</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="If you now check a unfinished task it will appear in the finished list and has a different styling to show it is not unfinished anymore. Furthermore, I added a copyright symbol with my name and the current year">
+      <option name="closed" value="true" />
+      <created>1759243741291</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1759243741291</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Design Prototype + Task Search Function" />
@@ -152,6 +176,7 @@
     <MESSAGE value="You can now sort your todos with drag &amp; drop and also delete tasks" />
     <MESSAGE value="Fixed bug that you delete wrong task when searching for a specific task. The project now uses vite and Tailwind &amp; AlpineJS is installed as a module." />
     <MESSAGE value="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future." />
-    <option name="LAST_COMMIT_MESSAGE" value="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future." />
+    <MESSAGE value="If you now check a unfinished task it will appear in the finished list and has a different styling to show it is not unfinished anymore. Furthermore, I added a copyright symbol with my name and the current year" />
+    <option name="LAST_COMMIT_MESSAGE" value="If you now check a unfinished task it will appear in the finished list and has a different styling to show it is not unfinished anymore. Furthermore, I added a copyright symbol with my name and the current year" />
   </component>
 </project>

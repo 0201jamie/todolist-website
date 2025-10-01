@@ -3,55 +3,39 @@ import sort from '@alpinejs/sort'
 
 Alpine.plugin(sort)
 
-console.log('test')
-
-Alpine.data('todo', () => ({
-    tasks: ['Clean room', 'Read 10 Sites', 'Learn AlpineJS & Tailwind'],
-    finished_tasks: ['Clean room', 'Read 10 Sites', 'Learn AlpineJS'],
+Alpine.store('todo', {
     search: '',
+    tasks: {
+        "1": {
+            id: crypto.randomUUID(),
+            label: "Clean room",
+            active: true,
+        },
+        "2": {
+            id: crypto.randomUUID(),
+            label: "Read 10 Sites",
+            active: true,
+        },
+        "3": {
+            id: crypto.randomUUID(),
+            label: "Learn AlpineJS & Tailwind",
+            active: true,
+        },
+    },
 
     get filteredTasks()
     {
-        return this.tasks.filter(
-            i => i.toLowerCase().includes(this.search.toLowerCase())
+        return Object.values(this.tasks).filter(
+            i => i.label.toLowerCase().includes(this.search.toLowerCase())
         )
+
     },
 
-    addTask()
-    {
-        for (let i = 0; i < this.tasks.length; i++) {
-            if (this.tasks[i] === this.search) {
-                return true
-            }
-        }
-        this.tasks.push(this.search)
-    },
-
-    deleteTask(task)
-    {
-        const deletedTask = task
-        for (let i = 0; i < this.tasks.length; i++) {
-            if (this.tasks[i] === deletedTask) {
-                this.tasks.splice(i, 1)
-            }
-        }
-    },
-
-    finishTask(task) {
-        console.log('finished task')
-        const finishedTask = task
-
-        for (let i = 0; i < this.tasks.length; i++) {
-            if (this.tasks[i] === finishedTask) {
-                this.finished_tasks.push(finishedTask)
-                this.tasks.splice(i, 1)
-            }
-        }
+    deleteTask(task) {
+        return true
     }
-}))
+})
 
 window.Alpine = Alpine
 
 Alpine.start()
-
-console.log('Alpine')
