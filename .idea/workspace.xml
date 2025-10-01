@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="I rewrited my Code by now using Objects to store the data of a task instead of only storing the names in an array. For now just the search function works and the tasks now get a random UUID as element id.">
+    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
@@ -103,7 +103,7 @@
       <updated>1759143938828</updated>
       <workItem from="1759143939858" duration="11720000" />
       <workItem from="1759217054263" duration="23002000" />
-      <workItem from="1759304196810" duration="23362000" />
+      <workItem from="1759304196810" duration="25288000" />
     </task>
     <task id="LOCAL-00001" summary="First Design Prototype + Task Search Function">
       <option name="closed" value="true" />
@@ -161,7 +161,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759317557519</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code.">
+      <option name="closed" value="true" />
+      <created>1759331681400</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1759331681400</updated>
+    </task>
+    <task id="LOCAL-00009" summary="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code.">
+      <option name="closed" value="true" />
+      <created>1759331715104</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1759331715104</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +202,7 @@
     <MESSAGE value="You can now check the Checkbox by Pressing enter =&gt; if you click it currently just returns the name of the task. Additionally, I added a second list where you're finished tasks should appear in the future." />
     <MESSAGE value="If you now check a unfinished task it will appear in the finished list and has a different styling to show it is not unfinished anymore. Furthermore, I added a copyright symbol with my name and the current year" />
     <MESSAGE value="I rewrited my Code by now using Objects to store the data of a task instead of only storing the names in an array. For now just the search function works and the tasks now get a random UUID as element id." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code." />
+    <option name="LAST_COMMIT_MESSAGE" value="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code." />
   </component>
 </project>

@@ -5,8 +5,9 @@ Alpine.plugin(sort)
 
 Alpine.store('todo', {
     search: '',
-    tasks: {  },
+    tasks: { },
     isListFilled: false,
+    showList: true,
 
     // TODO: Implement Function that checks if there are active tasks
     checkIfListIsFilled() {
@@ -32,6 +33,10 @@ Alpine.store('todo', {
     deleteTask(task) {
         delete this.tasks[task.id]
     },
+
+    moveFinishedTask(task) {
+        const taskArrayLength = Object.keys(this.tasks).length
+    }
 })
 
 window.Alpine = Alpine

@@ -12,11 +12,14 @@
         <!-- TODO: Fix checkboxes  -->
         <ul class="mb-5" x-sort>
             <div class="flex flex-row justify-between">
-                <p class="mb-2 text-2xl">Need to do:</p>
+                <button class="flex flex-row items-center cursor-pointer" @click="$store.todo.showList = !$store.todo.showList">
+                    <img src="Assets/dropdown.png" class="h-2.5 w-2.5 mr-1" :class="$store.todo.showList ? '' : '-rotate-90'">
+                    <p class="mb-2 text-xl">Need to do:</p>
+                </button>
                 <button x-show="$store.todo.isListFilled" class="cursor-pointer">Sort</button>
             </div>
             <template x-for="task in $store.todo.filteredTasks" class="bg-white rounded-md">
-                <li
+                <li x-show="$store.todo.showList"
                     class="flex flex-row items-center w-150 bg-white mb-2 rounded py-2 px-5 justify-between" :id="task.id" :class="task.active ? '' : 'opacity-50'">
                     <div class="flex flex-row items-center py-2">
                         <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active">
@@ -32,8 +35,9 @@
             </template>
         </ul>
         <hr class="-gray-100 h-0.1 w-150 mb-5">
-        <div>
-            <a href="https://www.flaticon.com/free-icons/delete" title="delete icons" class="text-center">Delete icons created by IYAHICON - Flaticon</a>
+        <div class="flex flex-col">
+            <a href="https://www.flaticon.com/free-icons/delete" title="delete icons" class="font-light text-center text-blue-600 underline">Delete icons created by IYAHICON - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons" class="font-light text-center text-blue-600 underline">Arrow icons created by Freepik - Flaticon</a>
             <p x-text="'&copy' + new Date().getFullYear() + ' Jamie Augustin'" class="font-light text-center"></p>
         </div>
     </div>
