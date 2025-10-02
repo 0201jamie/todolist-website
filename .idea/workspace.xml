@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code.">
+    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="You can now toggle the visibility of your tasks by clicking on the 'Need to do:' text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
@@ -50,26 +50,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.toDoOptions",
-    "ts.external.directory.path": "C:\\Users\\j.augustin\\AppData\\Local\\Programs\\WebStorm 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.toDoOptions&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\j.augustin\\AppData\\Local\\Programs\\WebStorm 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -103,7 +103,8 @@
       <updated>1759143938828</updated>
       <workItem from="1759143939858" duration="11720000" />
       <workItem from="1759217054263" duration="23002000" />
-      <workItem from="1759304196810" duration="25288000" />
+      <workItem from="1759304196810" duration="25965000" />
+      <workItem from="1759391761764" duration="6924000" />
     </task>
     <task id="LOCAL-00001" summary="First Design Prototype + Task Search Function">
       <option name="closed" value="true" />
@@ -177,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759331715104</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="You can now toggle the visibility of your tasks by clicking on the 'Need to do:' text">
+      <option name="closed" value="true" />
+      <created>1759333404928</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759333404928</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +212,7 @@
     <MESSAGE value="If you now check a unfinished task it will appear in the finished list and has a different styling to show it is not unfinished anymore. Furthermore, I added a copyright symbol with my name and the current year" />
     <MESSAGE value="I rewrited my Code by now using Objects to store the data of a task instead of only storing the names in an array. For now just the search function works and the tasks now get a random UUID as element id." />
     <MESSAGE value="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code." />
-    <option name="LAST_COMMIT_MESSAGE" value="You can now add &amp; delete tasks and also check them. If a task is checked the opacity of it will change. I also added a sort button which is not visible for now and does not work. Apart from that, I increased the size of the elements and changed little things as well as optimized my code." />
+    <MESSAGE value="You can now toggle the visibility of your tasks by clicking on the 'Need to do:' text" />
+    <option name="LAST_COMMIT_MESSAGE" value="You can now toggle the visibility of your tasks by clicking on the 'Need to do:' text" />
   </component>
 </project>
