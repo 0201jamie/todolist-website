@@ -14,7 +14,7 @@
 <body class="bg-gray-100" x-data>
 <div class="h-screen flex flex-col items-center justify-center flex-wrap">
     <h2 class="text-4xl font-abold mt-5 mb-5">To Do List📝</h2>
-    <input type="text" class="border-1 border-gray-700 rounded-md p-3 w-150 mb-5 text-2xl" placeholder="Search or add Task..." x-model="$store.todo.search" @keyup.enter="$store.todo.addTask(crypto.randomUUID(), $store.todo.search, true)">
+    <input type="text" class="border-1 border-gray-700 rounded-md p-3 w-150 mb-5 text-2xl" placeholder="Search or add Task..." x-model="$store.todo.search" @keyup.enter="$store.todo.addTask(crypto.randomUUID(), $store.todo.search, false, new Date().toLocaleDateString`en-CA`, true)">
     <!-- TODO: Fix checkboxes  -->
     <ul class="mb-5" x-sort>
         <div class="flex flex-row justify-between">
@@ -24,19 +24,20 @@
             </button>
             <button x-show="$store.todo.isListFilled" class="cursor-pointer">Sort</button>
         </div>
-        <template x-for="task in $store.todo.filteredTasks" class="bg-white rounded-md">
+        <template x-for="task in $store.todo.filteredTasks">
             <li x-show="$store.todo.showList"
-                class="flex flex-row items-center w-150 bg-white mb-2 rounded py-2 px-5 justify-between" :id="task.id" :class="task.active ? '' : 'opacity-50'">
+                class="flex flex-row items-center w-150 bg-white mb-2 rounded-xl py-2 px-5 justify-between" :id="task.id" :class="task.active ? '' : 'opacity-50'">
                 <div class="flex flex-row items-center py-2">
                     <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active">
                     <div class="w-110">
-                        <p x-text="task.label" class="text-2xl"></p>
-                        <p x-text="task.description" class="text-md text-gray-700"></p>
+                        <p x-text="task.label" class="text-2xl" :class="task.active ? '' : 'line-through'"></p>
+                        <p x-text="task.description" class="text-md text-gray-700" :class="task.active ? '' : 'line-through'"></p>
+                        <input type="date" :value="task.dueDate" class="text-md text-emerald-600 w-26 h-fit underline" x-show="task.showDate">
                     </div>
                 </div>
                 <div>
                     <button
-                            class="w-4 h-4 cursor-pointer hover:opacity-70 transition duration-300" @click="$store.todo.shareTaskData(task.id, task.label, task.description) ;$refs.editModal.showModal()">
+                            class="w-4 h-4 cursor-pointer hover:opacity-70 transition duration-300" @click="$store.todo.shareTaskData(task.id, task.label, task.description, task.showDate, task.dueDate) ;$refs.editModal.showModal()">
                         <img src="Assets/edit.png">
                     </button>
                     <button
@@ -56,16 +57,24 @@
     </div>
 </div>
 <dialog x-ref="editModal" class="bg-white rounded-xl p-8 fixed inset-0 m-auto z-3">
-    <div class="flex flex-col items-center">
-        <div class="flex flex-col mb-5">
-            <label for="taskname-input">Task Name</label>
-            <input id="taskname-input" type="text" placeholder="e.g. clean room🧼" x-model="$store.todo.editLabel" class="border-1 border-gray-700 rounded-md p-3 w-150 text-2xl">
+    <div class="flex flex-col">
+        <div class="flex flex-col">
+            <div class="flex flex-col mb-5">
+                <label for="taskname-input">Task Name</label>
+                <input id="taskname-input" type="text" placeholder="e.g. clean room🧼" x-model="$store.todo.editLabel" class="border-1 border-gray-700 rounded-md p-3 w-150 text-2xl">
+            </div>
+            <div class="flex flex-col mb-5">
+                <label for="taskname-description">Task Description</label>
+                <textarea id="taskname-description" type="text" placeholder="Description for your task..." x-model="$store.todo.editDescription" class="border-1 border-gray-700 rounded-md p-3 w-150 text-2xl"></textarea>
+            </div>
+            <div class="flex items-center justify-start mb-5">
+                <input type="checkbox" class="mr-5 w-6 h-6 cursor-pointer" x-model="$store.todo.editShowDate" @keyup.enter="$store.todo.editShowDate = !$store.todo.editShowDate">
+                <input type="date" class="border-1 border-gray-700 rounded-md p-3 w-50 text-2xl" x-show="$store.todo.editShowDate" :value="$store.todo.editDate"></textarea>
+            </div>
         </div>
-        <div class="flex flex-col mb-5">
-            <label for="taskname-description">Task Description</label>
-            <textarea id="taskname-description" type="text" placeholder="Description for your task..." x-model="$store.todo.editDescription" class="border-1 border-gray-700 rounded-md p-3 w-150 text-2xl"></textarea>
+        <div class="flex justify-end">
+            <button @click="$store.todo.updateTaskData($store.todo.editId, $store.todo.editLabel, $store.todo.editDescription, $store.todo.editShowDate, $store.todo.editDate); $refs.editModal.close()" class="bg-blue-500 text-white rounded-xl w-30 p-2 font-bold cursor-pointer hover:opacity-70 transition duration-300">Update Task</button>
         </div>
-        <button @click="$store.todo.updateTaskData($store.todo.editId, $store.todo.editLabel, $store.todo.editDescription); $refs.editModal.close()" class="bg-blue-500 text-white rounded-xl w-30 p-2 font-bold cursor-pointer hover:opacity-70 transition duration-300">Update Task</button>
     </div>
 </dialog>
 <script type="module" src="main.js"></script>

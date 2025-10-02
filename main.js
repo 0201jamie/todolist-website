@@ -11,6 +11,8 @@ Alpine.store('todo', {
     editId: '',
     editLabel: '',
     editDescription: '',
+    editShowDate: false,
+    editDate: '',
 
     // TODO: Implement Function that checks if there are active tasks
     checkIfListIsFilled() {
@@ -32,13 +34,20 @@ Alpine.store('todo', {
         )
     },
 
-    addTask(taskId, search, taskActive) {
-        if (search === '') {
+    addTask(taskId, search, taskShowDate, taskDueDate, taskActive) {
+        if (search.includes('//')) {
+            taskShowDate = true
+            search = search.replace('//', '')
+        }
+
+        const taskInformation = search.split('::')
+
+        if (taskInformation[0] === '') {
             alert('Your task name is empty')
             return
         }
-        const taskArray = search.split('::')
-        const newTask = { id: taskId, label: taskArray[0], description: taskArray[1], active: taskActive }
+
+        const newTask = { id: taskId, label: taskInformation[0], description: taskInformation[1], showDate: taskShowDate, dueDate: taskDueDate, active: taskActive }
 
         this.tasks[taskId] = newTask;
         this.search = ''
@@ -48,19 +57,23 @@ Alpine.store('todo', {
         delete this.tasks[task.id]
     },
 
-    shareTaskData(taskId, taskLabel, taskDescription) {
+    shareTaskData(taskId, taskLabel, taskDescription, taskShowDate, taskDate) {
         this.editId = taskId
         this.editLabel = taskLabel
         this.editDescription = taskDescription
+        this.editShowDate = taskShowDate
+        this.editDate = taskDate
     },
 
-    updateTaskData(taskId, taskLabel, taskDescription) {
+    updateTaskData(taskId, taskLabel, taskDescription, taskShowDate, taskDate) {
         if (taskLabel === '') {
             alert('Your task name is empty')
             return
         }
         this.tasks[taskId].label = taskLabel
         this.tasks[taskId].description = taskDescription
+        this.tasks[taskId].showDate = taskShowDate
+        this.tasks[taskId].dueDate = taskDate
     },
 
     moveFinishedTask(task) {
