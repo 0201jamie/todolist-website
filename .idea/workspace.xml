@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="You can now add a description to your Task by writing '::' in the 'Search or add Task...' Input followed by the task description (e.g. 'clean room::Sort books, clean desk, ...'. Also, you can edit the description now.">
+    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="Added a calendar feature which currently does not change in the object when editing it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
       <workItem from="1759143939858" duration="11720000" />
       <workItem from="1759217054263" duration="23002000" />
       <workItem from="1759304196810" duration="25965000" />
-      <workItem from="1759391761764" duration="17151000" />
+      <workItem from="1759391761764" duration="25402000" />
     </task>
     <task id="LOCAL-00001" summary="First Design Prototype + Task Search Function">
       <option name="closed" value="true" />
@@ -202,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759400395200</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added a calendar feature which currently does not change in the object when editing it">
+      <option name="closed" value="true" />
+      <created>1759410719605</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1759410719605</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +240,7 @@
     <MESSAGE value="You can now toggle the visibility of your tasks by clicking on the 'Need to do:' text" />
     <MESSAGE value="You now see how many tasks are in your list and you can edit the task name as well as the description which is not implemented yet." />
     <MESSAGE value="You can now add a description to your Task by writing '::' in the 'Search or add Task...' Input followed by the task description (e.g. 'clean room::Sort books, clean desk, ...'. Also, you can edit the description now." />
-    <option name="LAST_COMMIT_MESSAGE" value="You can now add a description to your Task by writing '::' in the 'Search or add Task...' Input followed by the task description (e.g. 'clean room::Sort books, clean desk, ...'. Also, you can edit the description now." />
+    <MESSAGE value="Added a calendar feature which currently does not change in the object when editing it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a calendar feature which currently does not change in the object when editing it" />
   </component>
 </project>

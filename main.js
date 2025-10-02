@@ -14,12 +14,12 @@ Alpine.store('todo', {
     editShowDate: false,
     editDate: '',
 
-    // TODO: Implement Function that checks if there are active tasks
-    checkIfListIsFilled() {
-        // const taskArrayLength = Object.keys(this.tasks).length
+    init() {
+        this.tasks = JSON.parse(localStorage.getItem('tasks'));
+        console.log(this.tasks);
     },
 
-    taskLengthString(){
+    taskLengthString() {
         if(Object.keys(this.tasks).length === 1){
             return "Need to do (" + Object.keys(this.tasks).length + " task):"
         }
@@ -50,6 +50,9 @@ Alpine.store('todo', {
         const newTask = { id: taskId, label: taskInformation[0], description: taskInformation[1], showDate: taskShowDate, dueDate: taskDueDate, active: taskActive }
 
         this.tasks[taskId] = newTask;
+
+        this.updateLokalStorage()
+
         this.search = ''
     },
 
@@ -74,6 +77,13 @@ Alpine.store('todo', {
         this.tasks[taskId].description = taskDescription
         this.tasks[taskId].showDate = taskShowDate
         this.tasks[taskId].dueDate = taskDate
+    },
+
+    updateLokalStorage() {
+        console.log('update lokalStorage')
+
+        const str = JSON.stringify(this.tasks);
+        localStorage.setItem("tasks", str);
     },
 
     moveFinishedTask(task) {
