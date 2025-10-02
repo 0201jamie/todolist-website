@@ -20,7 +20,7 @@
         <div class="flex flex-row justify-between">
             <button class="flex flex-row items-center cursor-pointer" @click="$store.todo.showList = !$store.todo.showList">
                 <img src="Assets/dropdown.png" class="h-2.5 w-2.5 mr-1" :class="$store.todo.showList ? '' : '-rotate-90'">
-                <p class="mb-2 text-xl" x-text="'Need to do (' + $store.todo.taskLength() + ' tasks):'"></p>
+                <p class="mb-2 text-xl" x-text="$store.todo.taskLengthString()"></p>
             </button>
             <button x-show="$store.todo.isListFilled" class="cursor-pointer">Sort</button>
         </div>
@@ -29,11 +29,14 @@
                 class="flex flex-row items-center w-150 bg-white mb-2 rounded py-2 px-5 justify-between" :id="task.id" :class="task.active ? '' : 'opacity-50'">
                 <div class="flex flex-row items-center py-2">
                     <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active">
-                    <p x-text="task.label" class="text-2xl"></p>
+                    <div class="w-110">
+                        <p x-text="task.label" class="text-2xl"></p>
+                        <p x-text="task.description" class="text-md text-gray-700"></p>
+                    </div>
                 </div>
                 <div>
                     <button
-                            class="w-4 h-4 cursor-pointer hover:opacity-70 transition duration-300" @click="$store.todo.shareTaskData(task.id, task.label) ;$refs.editModal.showModal()">
+                            class="w-4 h-4 cursor-pointer hover:opacity-70 transition duration-300" @click="$store.todo.shareTaskData(task.id, task.label, task.description) ;$refs.editModal.showModal()">
                         <img src="Assets/edit.png">
                     </button>
                     <button
@@ -60,9 +63,9 @@
         </div>
         <div class="flex flex-col mb-5">
             <label for="taskname-description">Task Description</label>
-            <textarea id="taskname-description" type="text" placeholder="Description for your task..." x-model="" class="border-1 border-gray-700 rounded-md p-3 w-150 text-2xl"></textarea>
+            <textarea id="taskname-description" type="text" placeholder="Description for your task..." x-model="$store.todo.editDescription" class="border-1 border-gray-700 rounded-md p-3 w-150 text-2xl"></textarea>
         </div>
-        <button @click="$store.todo.updateTaskData($store.todo.editId, $store.todo.editLabel); $refs.editModal.close()" class="bg-blue-500 text-white rounded-xl w-30 p-2 font-bold cursor-pointer hover:opacity-70 transition duration-300">Update Task</button>
+        <button @click="$store.todo.updateTaskData($store.todo.editId, $store.todo.editLabel, $store.todo.editDescription); $refs.editModal.close()" class="bg-blue-500 text-white rounded-xl w-30 p-2 font-bold cursor-pointer hover:opacity-70 transition duration-300">Update Task</button>
     </div>
 </dialog>
 <script type="module" src="main.js"></script>

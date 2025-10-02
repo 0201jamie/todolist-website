@@ -10,14 +10,19 @@ Alpine.store('todo', {
     showList: true,
     editId: '',
     editLabel: '',
+    editDescription: '',
 
     // TODO: Implement Function that checks if there are active tasks
     checkIfListIsFilled() {
         // const taskArrayLength = Object.keys(this.tasks).length
     },
 
-    taskLength(){
-        return Object.keys(this.tasks).length
+    taskLengthString(){
+        if(Object.keys(this.tasks).length === 1){
+            return "Need to do (" + Object.keys(this.tasks).length + " task):"
+        }
+        return "Need to do (" + Object.keys(this.tasks).length + " tasks):"
+
     },
 
     get filteredTasks()
@@ -27,12 +32,13 @@ Alpine.store('todo', {
         )
     },
 
-    addTask(taskId, taskLabel, taskActive) {
-        if (taskLabel === '') {
+    addTask(taskId, search, taskActive) {
+        if (search === '') {
             alert('Your task name is empty')
             return
         }
-        const newTask = { id: taskId, label: taskLabel, active: taskActive }
+        const taskArray = search.split('::')
+        const newTask = { id: taskId, label: taskArray[0], description: taskArray[1], active: taskActive }
 
         this.tasks[taskId] = newTask;
         this.search = ''
@@ -42,17 +48,19 @@ Alpine.store('todo', {
         delete this.tasks[task.id]
     },
 
-    shareTaskData(taskId, taskLabel) {
+    shareTaskData(taskId, taskLabel, taskDescription) {
         this.editId = taskId
         this.editLabel = taskLabel
+        this.editDescription = taskDescription
     },
 
-    updateTaskData(taskId, taskLabel) {
+    updateTaskData(taskId, taskLabel, taskDescription) {
         if (taskLabel === '') {
             alert('Your task name is empty')
             return
         }
         this.tasks[taskId].label = taskLabel
+        this.tasks[taskId].description = taskDescription
     },
 
     moveFinishedTask(task) {
