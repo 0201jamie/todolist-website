@@ -21,14 +21,14 @@
                 <img src="Assets/dropdown.png" class="h-2.5 w-2.5 mr-1" :class="$store.todo.showList ? '' : '-rotate-90'">
                 <p class="mb-2 text-xl" x-text="$store.todo.taskLengthString()"></p>
             </button>
-            <button class="cursor-pointer" @click="">Clear</button>
+            <button class="cursor-pointer" @click="" x-show="false">Clear</button>
         </div>
         <template x-for="task in $store.todo.filteredTasks" >
             <li x-show="$store.todo.showList" @keyup.ctrl.alt.e="$store.todo.shareTaskData(task.id, task.label, task.description, task.showDate, task.dueDate) ;$refs.editModal.showModal()"
-                class="" :id="task.id" x-effect="console.log('update'); $store.todo.updateLokalStorage()" x-transition>
+                class="" :id="task.id" x-effect="$store.todo.updateLocalStorage()" x-transition>
                 <div class="flex flex-row items-center w-150 bg-white mb-2 rounded-xl py-2 px-5 justify-between" :class="task.active ? '' : 'opacity-50'">
                     <div class="flex flex-row items-center py-2">
-                        <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active; $store.todo.moveFinishedTask">
+                        <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active">
                         <div class="w-110">
                             <p x-text="task.label" class="text-2xl" :class="task.active ? '' : 'line-through'"></p>
                             <p x-text="task.description" class="text-md text-gray-700" :class="task.active ? '' : 'line-through'"></p>
@@ -62,10 +62,10 @@
         <!-- TODO: Fix it so when drag & drop a task the position in the array will update and that the opacity will no longer reset if the task is checked -->
         <template x-for="task in $store.todo.finishedFilteredTasks" >
             <li x-show="$store.todo.showFinishedList" @keyup.ctrl.alt.e="$store.todo.shareTaskData(task.id, task.label, task.description, task.showDate, task.dueDate) ;$refs.editModal.showModal()"
-                class="" :id="task.id" x-effect="$store.todo.updateLokalStorage()" x-transition>
+                class="" :id="task.id" x-effect="$store.todo.updateLocalStorage()" x-transition>
                 <div class="flex flex-row items-center w-150 bg-white mb-2 rounded-xl py-2 px-5 justify-between" :class="task.active ? '' : 'opacity-50'">
                     <div class="flex flex-row items-center py-2">
-                        <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active; $store.todo.moveFinishedTask">
+                        <input type="checkbox" class="mr-4 w-5 h-5 cursor-pointer" x-model="!task.active" @keyup.enter="task.active = !task.active" @click="task.active = !task.active">
                         <div class="w-110">
                             <p x-text="task.label" class="text-2xl" :class="task.active ? '' : 'line-through'"></p>
                             <p x-text="task.description" class="text-md text-gray-700" :class="task.active ? '' : 'line-through'"></p>

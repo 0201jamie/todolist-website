@@ -69,13 +69,14 @@ Alpine.store('todo', {
 
         this.tasks[taskId] = newTask;
 
-        this.updateLokalStorage()
+        this.updateLocalStorage()
 
         this.search = ''
     },
 
     deleteTask(task) {
         delete this.tasks[task.id]
+        this.updateLocalStorage()
     },
 
     shareTaskData(taskId, taskLabel, taskDescription, taskShowDate, taskDate) {
@@ -97,14 +98,10 @@ Alpine.store('todo', {
         this.tasks[taskId].dueDate = taskDate
     },
 
-    updateLokalStorage() {
+    updateLocalStorage() {
         const str = JSON.stringify(this.tasks);
         localStorage.setItem("tasks", str);
     },
-
-    moveFinishedTask(task) {
-        const taskArrayLength = Object.keys(this.tasks).length
-    }
 })
 
 window.Alpine = Alpine
