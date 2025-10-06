@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>To Do List App</title>
+    <!-- Icon from https://www.svgrepo.com/svg/356977/todo-list -->
+    <link rel="icon" href="Assets/icon.svg">
     <link rel="stylesheet" href="style.css">
     <style>
         dialog::backdrop {
@@ -113,7 +115,7 @@
             </div>
         </div>
         <div class="flex justify-end">
-            <button @click="$store.todo.updateTaskData($store.todo.editId, $store.todo.editLabel, $store.todo.editDescription, $store.todo.editShowDate, $store.todo.editDate); $refs.editModal.close()" class="bg-blue-500 text-white rounded-xl w-30 p-2 font-bold cursor-pointer hover:opacity-70 transition duration-300">Update Task</button>
+            <button @click="console.log($store.todo.editDate); $store.todo.updateTaskData($store.todo.editId, $store.todo.editLabel, $store.todo.editDescription, $store.todo.editShowDate, $store.todo.editDate); $refs.editModal.close()" class="bg-blue-500 text-white rounded-xl w-30 p-2 font-bold cursor-pointer hover:opacity-70 transition duration-300">Update Task</button>
         </div>
     </div>
 </dialog>
