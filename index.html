@@ -26,7 +26,7 @@
             <button class="cursor-pointer" @click="" x-show="false">Clear</button>
         </div>
         <template x-for="task in $store.todo.filteredTasks" >
-            <li x-show="$store.todo.showList" @keyup.ctrl.alt.e="$store.todo.shareTaskData(task.id, task.label, task.description, task.showDate, task.dueDate) ;$refs.editModal.showModal()"
+            <li x-show="$store.todo.showList" @keyup.ctrl.alt.e="$store.todo.shareTaskData(task.id, task.label, task.description, task.showDate, task.dueDate) ;$refs.editModal.showModal()" @keyup.esc="$store.todo.deleteTask(task)"
                 class="" :id="task.id" x-effect="$store.todo.updateLocalStorage()" x-transition>
                 <div class="flex flex-row items-center w-150 bg-white mb-2 rounded-xl py-2 px-5 justify-between" :class="task.active ? '' : 'opacity-50'">
                     <div class="flex flex-row items-center py-2">
