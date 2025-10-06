@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="Added a calendar feature which currently does not change in the object when editing it">
+    <list default="true" id="8b55d1a2-bbc3-46c7-92df-159f5f3e783d" name="Changes" comment="Added local storage for your tasks which gets updated if anything in your task list will change. Now you do not loose any of your tasks when closing the browser or you turn of your device.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
@@ -105,7 +105,8 @@
       <workItem from="1759143939858" duration="11720000" />
       <workItem from="1759217054263" duration="23002000" />
       <workItem from="1759304196810" duration="25965000" />
-      <workItem from="1759391761764" duration="25402000" />
+      <workItem from="1759391761764" duration="25712000" />
+      <workItem from="1759738257145" duration="7267000" />
     </task>
     <task id="LOCAL-00001" summary="First Design Prototype + Task Search Function">
       <option name="closed" value="true" />
@@ -211,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759410719605</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added local storage for your tasks which gets updated if anything in your task list will change. Now you do not loose any of your tasks when closing the browser or you turn of your device.">
+      <option name="closed" value="true" />
+      <created>1759420799283</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1759420799283</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +250,8 @@
     <MESSAGE value="You now see how many tasks are in your list and you can edit the task name as well as the description which is not implemented yet." />
     <MESSAGE value="You can now add a description to your Task by writing '::' in the 'Search or add Task...' Input followed by the task description (e.g. 'clean room::Sort books, clean desk, ...'. Also, you can edit the description now." />
     <MESSAGE value="Added a calendar feature which currently does not change in the object when editing it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a calendar feature which currently does not change in the object when editing it" />
+    <MESSAGE value="You can no" />
+    <MESSAGE value="Added local storage for your tasks which gets updated if anything in your task list will change. Now you do not loose any of your tasks when closing the browser or you turn of your device." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added local storage for your tasks which gets updated if anything in your task list will change. Now you do not loose any of your tasks when closing the browser or you turn of your device." />
   </component>
 </project>

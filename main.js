@@ -8,6 +8,7 @@ Alpine.store('todo', {
     tasks: { },
     isListFilled: false,
     showList: true,
+    showFinishedList: true,
     editId: '',
     editLabel: '',
     editDescription: '',
@@ -15,22 +16,39 @@ Alpine.store('todo', {
     editDate: '',
 
     init() {
-        this.tasks = JSON.parse(localStorage.getItem('tasks'));
-        console.log(this.tasks);
+        const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+        if (savedTasks) {
+            this.tasks = savedTasks;
+        }
     },
 
     taskLengthString() {
-        if(Object.keys(this.tasks).length === 1){
-            return "Need to do (" + Object.keys(this.tasks).length + " task):"
+        if(Object.keys(this.filteredTasks).length === 1){
+            return "🎯Need to do (" + Object.keys(this.filteredTasks).length + " task):"
         }
-        return "Need to do (" + Object.keys(this.tasks).length + " tasks):"
+        return "🎯Need to do (" + Object.keys(this.filteredTasks).length + " tasks):"
+
+    },
+
+    get finishedFilteredTasks()
+    {
+        return Object.values(this.tasks).filter(
+            i => i.active === false
+        )
+    },
+
+    finishedTaskLengthString() {
+        if(Object.keys(this.finishedFilteredTasks).length === 1){
+            return "🎉Finished (" + Object.keys(this.finishedFilteredTasks).length + " task):"
+        }
+        return "🎉Finished (" + Object.keys(this.finishedFilteredTasks).length + " tasks):"
 
     },
 
     get filteredTasks()
     {
         return Object.values(this.tasks).filter(
-            i => i.label.toLowerCase().includes(this.search.toLowerCase())
+            i => i.label.toLowerCase().includes(this.search.toLowerCase()) && i.active === true
         )
     },
 
@@ -80,8 +98,6 @@ Alpine.store('todo', {
     },
 
     updateLokalStorage() {
-        console.log('update lokalStorage')
-
         const str = JSON.stringify(this.tasks);
         localStorage.setItem("tasks", str);
     },
